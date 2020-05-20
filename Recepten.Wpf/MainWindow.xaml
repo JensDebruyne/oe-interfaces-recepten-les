@@ -23,7 +23,7 @@
         <Button x:Name="btnSlaOp" Content="Sla Op" HorizontalAlignment="Left" Margin="391,219,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="btnSlaOp_Click"/>
         <Button x:Name="btnVerwijder" Content="Verwijder" HorizontalAlignment="Left" Margin="505,219,0,0" VerticalAlignment="Top" Width="66" Height="28" Click="btnVerwijder_Click"/>
         <Label Content="Id" HorizontalAlignment="Left" Margin="383,59,0,0" VerticalAlignment="Top" Width="109"/>
-        <ComboBox x:Name="cmbDataSource" HorizontalAlignment="Left" Margin="391,9,0,0" VerticalAlignment="Top" Width="153" />
+        <ComboBox x:Name="cmbDataSource" HorizontalAlignment="Left" Margin="391,9,0,0" VerticalAlignment="Top" Width="153" SelectionChanged="cmbDataSource_SelectionChanged" />
 
 
     </Grid>

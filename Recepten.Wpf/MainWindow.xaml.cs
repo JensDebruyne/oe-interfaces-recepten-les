@@ -15,8 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Recepten.Lib.Entities;
 using Recepten.Lib.Services;
-
-
+using Recepten.Lib.Interfaces;
 
 namespace Recepten.Wpf
 {
@@ -27,14 +26,18 @@ namespace Recepten.Wpf
     {
 
         Artikel huidigArtikel;
-        MockDataArtikelen artikelService;
+        ArtikelService artikelService;
+
+        enum DataSources { EmptyData, MockData }
 
         public MainWindow()
         {
             InitializeComponent();
 
-            artikelService = new MockDataArtikelen();
+            artikelService = new ArtikelService(new MockDataArtikelen());
         }
+
+
 
         private void MaakGuiLeeg()
         {
@@ -80,7 +83,8 @@ namespace Recepten.Wpf
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LaadBeginSituatie();
+            cmbDataSource.ItemsSource = Enum.GetValues(typeof(DataSources));
+            cmbDataSource.SelectedIndex = 0;
         }
 
         void LaadBeginSituatie()
@@ -90,6 +94,24 @@ namespace Recepten.Wpf
             lstArtikelen.SelectedIndex = 0;
             tbkFeedback.Visibility = Visibility.Hidden;
             txtPrijs.TextChanged += DecimalTextBox_TextChanged;
+        }
+
+        void BepaalDataSource(DataSources dataSource)
+        {
+            IArtikelData artikelBestand = null;
+            switch(dataSource)
+            {
+                case DataSources.EmptyData:
+                    artikelBestand = new EmptyDataArtikelen();
+                    break;
+                case DataSources.MockData:
+                    artikelBestand = new MockDataArtikelen();
+                    break;
+                default:
+                    break;
+            }
+            //nieuwe instance van ArtikelService op basis van een klasse die IArtikelData implementeert
+            artikelService = new ArtikelService(artikelBestand);
         }
 
         private void lstArtikelen_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -147,5 +169,20 @@ namespace Recepten.Wpf
             }
         }
 
+        private void cmbDataSource_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataSources gekozenDataSource = (DataSources)cmbDataSource.SelectedItem;
+            try
+            {
+                BepaalDataSource(gekozenDataSource);
+                LaadBeginSituatie();
+                tbkFeedback.Visibility = Visibility.Hidden;
+            }
+            catch (Exception ex)
+            {
+                ToonMelding(ex.Message);
+            }
+
+        }
     }
 }
