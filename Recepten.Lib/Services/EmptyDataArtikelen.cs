@@ -1,4 +1,5 @@
 ﻿using Recepten.Lib.Entities;
+using Recepten.Lib.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Recepten.Lib.Services
 {
-    public class EmptyDataArtikelen
+    public class EmptyDataArtikelen : IArtikelData
     {
         public List<Artikel> Artikelen { get; set; }
 
         public EmptyDataArtikelen()
         {
-            Artikelen = new List<Artikel>();
+            LaadArtikelen();
         }
 
         public void SlaOp(Artikel opTeSlaan)
@@ -64,5 +65,9 @@ namespace Recepten.Lib.Services
             return gevonden;
         }
 
+        public void LaadArtikelen()
+        {
+            Artikelen = new List<Artikel>();
+        }
     }
 }

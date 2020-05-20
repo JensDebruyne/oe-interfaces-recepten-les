@@ -27,13 +27,13 @@ namespace Recepten.Wpf
     {
 
         Artikel huidigArtikel;
-        EmptyDataArtikelen artikelService;
+        MockDataArtikelen artikelService;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            artikelService = new EmptyDataArtikelen();
+            artikelService = new MockDataArtikelen();
         }
 
         private void MaakGuiLeeg()

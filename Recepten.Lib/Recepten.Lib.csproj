@@ -42,12 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Artikel.cs" />
+    <Compile Include="Interfaces\IArtikelData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmptyDataArtikelen.cs" />
     <Compile Include="Services\MockDataArtikelen.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

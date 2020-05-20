@@ -1,4 +1,5 @@
 ﻿using Recepten.Lib.Entities;
+using Recepten.Lib.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Recepten.Lib.Services
 {
-    public class MockDataArtikelen
+    public class MockDataArtikelen : IArtikelData
     {
         public List<Artikel> Artikelen { get; set; }
 
