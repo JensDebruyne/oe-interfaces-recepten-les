@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recepten.Wpf", "Recepten.Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recepten.Lib", "Recepten.Lib\Recepten.Lib.csproj", "{7D66117D-1639-425B-82A1-110C2E8FB962}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileStreams.Lib", "TextFileStreams.Lib\TextFileStreams.Lib.csproj", "{56F3FA86-4F97-40CA-A877-B58359EF3225}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D66117D-1639-425B-82A1-110C2E8FB962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D66117D-1639-425B-82A1-110C2E8FB962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D66117D-1639-425B-82A1-110C2E8FB962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F3FA86-4F97-40CA-A877-B58359EF3225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F3FA86-4F97-40CA-A877-B58359EF3225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F3FA86-4F97-40CA-A877-B58359EF3225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F3FA86-4F97-40CA-A877-B58359EF3225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

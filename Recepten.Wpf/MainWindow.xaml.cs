@@ -28,6 +28,8 @@ namespace Recepten.Wpf
         Artikel huidigArtikel;
         ArtikelService artikelService;
 
+
+        //Er moet ook gewerkt kunnen worden met data uit een textfile.
         enum DataSources { EmptyData, MockData }
 
         public MainWindow()
@@ -36,8 +38,6 @@ namespace Recepten.Wpf
 
             artikelService = new ArtikelService(new MockDataArtikelen());
         }
-
-
 
         private void MaakGuiLeeg()
         {

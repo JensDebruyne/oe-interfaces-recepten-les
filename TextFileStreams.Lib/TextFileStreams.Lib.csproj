@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D66117D-1639-425B-82A1-110C2E8FB962}</ProjectGuid>
+    <ProjectGuid>{56F3FA86-4F97-40CA-A877-B58359EF3225}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Recepten.Lib</RootNamespace>
-    <AssemblyName>Recepten.Lib</AssemblyName>
+    <RootNamespace>TextFileStreams.Lib</RootNamespace>
+    <AssemblyName>TextFileStreams.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Artikel.cs" />
-    <Compile Include="Interfaces\IArtikelData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ArtikelService.cs" />
-    <Compile Include="Services\EmptyDataArtikelen.cs" />
-    <Compile Include="Services\MockDataArtikelen.cs" />
-    <Compile Include="Services\TextFileDataArtikelen.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TextFileStreams.Lib\TextFileStreams.Lib.csproj">
-      <Project>{56f3fa86-4f97-40ca-a877-b58359ef3225}</Project>
-      <Name>TextFileStreams.Lib</Name>
-    </ProjectReference>
+    <Compile Include="ReadService.cs" />
+    <Compile Include="WriteService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
