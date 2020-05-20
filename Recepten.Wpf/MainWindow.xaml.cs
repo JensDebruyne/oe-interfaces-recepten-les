@@ -25,12 +25,13 @@ namespace Recepten.Wpf
     public partial class MainWindow : Window
     {
 
+        //Er moet ook gewerkt kunnen worden 
+        //met data uit een textfile.
+
         Artikel huidigArtikel;
         ArtikelService artikelService;
 
-
-        //Er moet ook gewerkt kunnen worden met data uit een textfile.
-        enum DataSources { EmptyData, MockData }
+        enum DataSources { EmptyData, MockData, TextFile }
 
         public MainWindow()
         {
