@@ -108,6 +108,9 @@ namespace Recepten.Wpf
                 case DataSources.MockData:
                     artikelBestand = new MockDataArtikelen();
                     break;
+                case DataSources.TextFile:
+                    artikelBestand = new TextFileDataArtikelen();
+                    break;
                 default:
                     break;
             }
