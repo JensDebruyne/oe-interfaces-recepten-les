@@ -44,6 +44,7 @@
     <Compile Include="Entities\Artikel.cs" />
     <Compile Include="Interfaces\IArtikelData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ArtikelService.cs" />
     <Compile Include="Services\EmptyDataArtikelen.cs" />
     <Compile Include="Services\MockDataArtikelen.cs" />
   </ItemGroup>
