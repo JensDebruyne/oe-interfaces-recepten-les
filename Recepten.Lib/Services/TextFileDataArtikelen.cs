@@ -58,6 +58,25 @@ namespace Recepten.Lib.Services
             return omgezet;
         }
 
+        public void SchrijfArtikelenNaarTextFile(string folderPad, string bestandsnaam)
+        {
+            List<string[]> artikelenOmgezet = new List<string[]>();
+            foreach (Artikel instance in Artikelen)
+            {
+                string prijs = instance.Prijs.ToString().Replace('.', huidigDecimaalTeken);
+                prijs = prijs.Replace(',', huidigDecimaalTeken);
+                string[] artikelInfo =
+                {
+                    instance.Id.ToString(),
+                    instance.Naam,
+                    instance.Eenheid,
+                    prijs
+                };
+                artikelenOmgezet.Add(artikelInfo);
+            }
+            WriteService.ListVanArrays_To_TextFile(artikelenOmgezet, folderPad, bestandsnaam, Separator.ToString());
+        }
+
         char GeefDecimaalTeken()
         {
             float testGetal = 0.1F;
@@ -67,12 +86,12 @@ namespace Recepten.Lib.Services
 
         public void SlaOp(Artikel opTeSlaan, bool nietNodig)
         {
-            //Geen verdere actie vereist
+            SchrijfArtikelenNaarTextFile(FolderPad, BestandsNaam);
         }
 
         public void Verwijder(Artikel teVerwijderen)
         {
-            //Geen verdere actie vereist
+            SchrijfArtikelenNaarTextFile(FolderPad, BestandsNaam);
         }
     }
 }

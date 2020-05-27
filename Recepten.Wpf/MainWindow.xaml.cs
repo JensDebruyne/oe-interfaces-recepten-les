@@ -31,6 +31,8 @@ namespace Recepten.Wpf
         Artikel huidigArtikel;
         ArtikelService artikelService;
 
+        DataSources startDataSource = DataSources.TextFile;
+
         enum DataSources { EmptyData, MockData, TextFile }
 
         public MainWindow()
@@ -85,7 +87,7 @@ namespace Recepten.Wpf
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cmbDataSource.ItemsSource = Enum.GetValues(typeof(DataSources));
-            cmbDataSource.SelectedIndex = 0;
+            cmbDataSource.SelectedItem = startDataSource;
         }
 
         void LaadBeginSituatie()
