@@ -29,5 +29,33 @@ namespace Recepten.Lib.Services
         {
             gekozenDataSource.SlaOp(opTeSlaan);
         }
+
+        public static int GeefIndexInLijst(Artikel teChecken, List<Artikel> artikelen)
+        {
+            int indexTeCheckenInstance = -1;
+            for (int i = 0; i < artikelen.Count; i++)
+            {
+                if (artikelen[i].Id == teChecken.Id)
+                {
+                    indexTeCheckenInstance = i;
+                    break;
+                }
+            }
+            return indexTeCheckenInstance;
+        }
+
+        static bool BehoortObjectTotLijst(Artikel teChecken, List<Artikel> artikelen)
+        {
+            bool gevonden = false;
+            foreach (Artikel instance in artikelen)
+            {
+                if (instance.Id == teChecken.Id)
+                {
+                    gevonden = true;
+                    break;
+                }
+            }
+            return gevonden;
+        }
     }
 }
