@@ -17,7 +17,7 @@ namespace Recepten.Lib.Services
             LaadArtikelen();
         }
 
-        public void SlaOp(Artikel opTeSlaan)
+        public void SlaOp(Artikel opTeSlaan, bool nietNodig)
         {
             if (opTeSlaan == null) throw new Exception("Geef een geldig artikel door om op te slaan");
             else if (!BehoortObjectTotLijst(opTeSlaan)) Artikelen.Add(opTeSlaan);

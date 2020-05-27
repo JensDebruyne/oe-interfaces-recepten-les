@@ -65,7 +65,7 @@ namespace Recepten.Lib.Services
             return testString[1];
         }
 
-        public void SlaOp(Artikel opTeSlaan)
+        public void SlaOp(Artikel opTeSlaan, bool nietNodig)
         {
 
         }

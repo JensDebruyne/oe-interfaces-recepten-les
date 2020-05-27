@@ -73,7 +73,7 @@ namespace Recepten.Lib.Entities
 		public override string ToString()
 		{
 			string info;
-			info = $"{Id} - {Naam}\n\t€ {Prijs}/{Eenheid}\n--------------------";
+			info = $"{Id} - {Naam}\n\t€ {Prijs}/{Eenheid}\n----";
 			return info;
 		}
 	}
