@@ -67,12 +67,12 @@ namespace Recepten.Lib.Services
 
         public void SlaOp(Artikel opTeSlaan, bool nietNodig)
         {
-
+            //Geen verdere actie vereist
         }
 
         public void Verwijder(Artikel teVerwijderen)
         {
-
+            //Geen verdere actie vereist
         }
     }
 }

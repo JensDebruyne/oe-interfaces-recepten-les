@@ -22,12 +22,37 @@ namespace Recepten.Lib.Services
 
         public void Verwijder(Artikel teVerwijderen)
         {
+            VerwijderInGeheugen(teVerwijderen);
             gekozenDataSource.Verwijder(teVerwijderen);
+        }
+
+        void VerwijderInGeheugen(Artikel teVerwijderen)
+        {
+            if (teVerwijderen != null && BehoortObjectTotLijst(teVerwijderen, Artikelen))
+            {
+                Artikelen.Remove(teVerwijderen);
+            }
+            else throw new Exception("Geef een geldig artikel door om te verwijderen");
         }
 
         public void SlaOp(Artikel opTeSlaan)
         {
-            gekozenDataSource.SlaOp(opTeSlaan);
+            bool isNieuw = SlaOpInGeheugen(opTeSlaan);
+            gekozenDataSource.SlaOp(opTeSlaan, isNieuw);
+        }
+
+        public bool SlaOpInGeheugen(Artikel opTeSlaan)
+        {
+            bool isNieuw = true;
+            if (opTeSlaan == null) throw new Exception("Geef een geldig artikel door om op te slaan");
+            else if (!BehoortObjectTotLijst(opTeSlaan, Artikelen)) Artikelen.Add(opTeSlaan);
+            else
+            {
+                int indexObject = GeefIndexInLijst(opTeSlaan, Artikelen);
+                Artikelen[indexObject] = opTeSlaan;
+                isNieuw = false;
+            }
+            return isNieuw;
         }
 
         public static int GeefIndexInLijst(Artikel teChecken, List<Artikel> artikelen)
